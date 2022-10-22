@@ -1,0 +1,8 @@
+mongo-data/*
+.env.*
+node_modules
+tmp
+dist
+.angular
+NX
+.DS_Store
