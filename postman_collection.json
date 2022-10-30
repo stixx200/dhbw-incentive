@@ -1,0 +1,371 @@
+{
+  "info": {
+    "_postman_id": "f37480a6-853a-4eff-8646-0bc81e6b0ea6",
+    "name": "requests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "login admin",
+      "request": {
+        "description": "",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"email\": \"admin@local\",\n\t\"password\": \"admin\"\n}"
+        },
+        "url": {
+          "raw": "{{ _.api }}/auth/login",
+          "host": [
+            "{{ _",
+            "api }}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "auth": {}
+      },
+      "response": []
+    },
+    {
+      "name": "login teamleader",
+      "request": {
+        "description": "",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"email\": \"teamleader@local\",\n\t\"password\": \"teamleader\"\n}"
+        },
+        "url": {
+          "raw": "{{ _.api }}/auth/login",
+          "host": [
+            "{{ _",
+            "api }}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "auth": {}
+      },
+      "response": []
+    },
+    {
+      "name": "login user",
+      "request": {
+        "description": "",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"email\": \"user@local\",\n\t\"password\": \"user\"\n}"
+        },
+        "url": {
+          "raw": "{{ _.api }}/auth/login",
+          "host": [
+            "{{ _",
+            "api }}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "auth": {}
+      },
+      "response": []
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "user \"admin\"",
+          "request": {
+            "description": "",
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/users/{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users",
+                "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "users",
+          "request": {
+            "description": "",
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/users",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user \"teamleader\"",
+          "request": {
+            "description": "",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"teamleader@local\",\n\t\"password\": \"teamleader\",\n\t\"firstname\": \"Rabe\",\n\t\"lastname\": \"Bobb\",\n\t\"roles\": [\"teamleader\"]\n}"
+            },
+            "url": {
+              "raw": "{{ _.api }}/users",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user \"user\"",
+          "request": {
+            "description": "",
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/users/{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users",
+                "{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user \"teamleader\"",
+          "request": {
+            "description": "",
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/users/{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users",
+                "{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user \"user\"",
+          "request": {
+            "description": "",
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/users/{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users",
+                "{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "description": "",
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"creditsToPlace\": 100,\n\t\"assignedUsers\": [\"{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}\"]\n}"
+            },
+            "url": {
+              "raw": "{{ _.api }}/users/{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users",
+                "{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user \"user\"",
+          "request": {
+            "description": "",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"user@local\",\n\t\"password\": \"user\",\n\t\"firstname\": \"Maximilian\",\n\t\"lastname\": \"Kuro\",\n\t\"roles\": [\"user\"]\n}"
+            },
+            "url": {
+              "raw": "{{ _.api }}/users",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "user \"teamleader\"",
+          "request": {
+            "description": "",
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/users/{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "users",
+                "{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "transactions",
+      "item": [
+        {
+          "name": "transactions for user",
+          "request": {
+            "description": "",
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ _.api }}/transactions?userId={% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "transactions?userId={% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        },
+        {
+          "name": "create transaction",
+          "request": {
+            "description": "",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"recipient\": \"{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}\",\n\t\"amount\": 5\n}"
+            },
+            "url": {
+              "raw": "{{ _.api }}/transactions",
+              "host": [
+                "{{ _",
+                "api }}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            },
+            "auth": {}
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

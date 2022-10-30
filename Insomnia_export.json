@@ -1,0 +1,499 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2022-10-30T19:45:03.621Z",
+    "__export_source": "insomnia.desktop.app:v2022.6.0",
+    "resources": [
+        {
+            "_id": "req_d1b9670e64214180857c4e534443b0f3",
+            "parentId": "fld_c80b42ff00864450981c9a4fbbd1d3f6",
+            "modified": 1667154116420,
+            "created": 1666451288675,
+            "url": "{{ _.api }}/transactions",
+            "name": "create transaction",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"recipient\": \"{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}\",\n\t\"amount\": 5\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'always', 60 %}"
+            },
+            "metaSortKey": -1666451288675,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_c80b42ff00864450981c9a4fbbd1d3f6",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1666451148953,
+            "created": 1666451148953,
+            "name": "transactions",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1666451148953,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "parentId": null,
+            "modified": 1666427196492,
+            "created": 1666427196492,
+            "name": "New Document",
+            "description": "",
+            "scope": "design",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_e0b48cda994e47cf8f87b237c58d48d3",
+            "parentId": "fld_c80b42ff00864450981c9a4fbbd1d3f6",
+            "modified": 1667154103243,
+            "created": 1666451150310,
+            "url": "{{ _.api }}/transactions?userId={% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}",
+            "name": "transactions for user",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'always', 60 %}"
+            },
+            "metaSortKey": -1666451150310,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_adcceb16f82847898563f1a60cc05a9f",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667154067999,
+            "created": 1666452313790,
+            "url": "{{ _.api }}/users/{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'always', 60 %}",
+            "name": "user",
+            "description": "",
+            "method": "PATCH",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"creditsToPlace\": 100,\n\t\"assignedUsers\": [\"{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}\"]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'always', 60 %}"
+            },
+            "metaSortKey": -1666452313790,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1666432599520,
+            "created": 1666432599520,
+            "name": "users",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1666432599520,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_da5fe4e36fd64202989bc916de6ad11b",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667154002012,
+            "created": 1666432621074,
+            "url": "{{ _.api }}/users",
+            "name": "user \"teamleader\"",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"teamleader@local\",\n\t\"password\": \"teamleader\",\n\t\"firstname\": \"Rabe\",\n\t\"lastname\": \"Bobb\",\n\t\"roles\": [\"teamleader\"]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666432621074,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_007320659b734598a8e8303cca88946d",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667154001367,
+            "created": 1667145902047,
+            "url": "{{ _.api }}/users",
+            "name": "user \"user\"",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"user@local\",\n\t\"password\": \"user\",\n\t\"firstname\": \"Maximilian\",\n\t\"lastname\": \"Kuro\",\n\t\"roles\": [\"user\"]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666432150962,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_24b960faaca446768982c63a4a16830f",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667153999419,
+            "created": 1666433423540,
+            "url": "{{ _.api }}/users/{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+            "name": "user \"user\"",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666431680850,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_72ef55d004ff4bdcb081f83e8da32f7d",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667154015303,
+            "created": 1667154009993,
+            "url": "{{ _.api }}/users/{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+            "name": "user \"teamleader\"",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666431210738,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a5a0371cc1fb40f69ea5e5445b5e027a",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667153929108,
+            "created": 1666430740626,
+            "url": "{{ _.api }}/users/{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+            "name": "user \"admin\"",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666430740626,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4112b2ddd3c84245a1401805ef28e14f",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667153963468,
+            "created": 1666451891612,
+            "url": "{{ _.api }}/users/{% response 'body', 'req_dc8ff9d98c184d34af4661a4a14de5a5', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+            "name": "user \"teamleader\"",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666429854595.25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_fb175c1284284094a6b75bf69c37587d",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1667153979960,
+            "created": 1666451962680,
+            "url": "{{ _.api }}/users/{% response 'body', 'req_2580127cb92142a791bdc66f0e5ad54d', 'b64::JC51c2VySWQ=::46b', 'never', 60 %}",
+            "name": "user \"user\"",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}"
+            },
+            "metaSortKey": -1666429411579.875,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_5e6a005ab04f4a73b07337197e485b8b",
+            "parentId": "fld_a0c91f63fb0847069f91e9ded1dd2820",
+            "modified": 1666451969665,
+            "created": 1666432614240,
+            "url": "{{ _.api }}/users",
+            "name": "users",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_2f89e8105e2c4a8ebde8a80e16dae16d', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'always', 60 %}"
+            },
+            "metaSortKey": -1666428968564.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2f89e8105e2c4a8ebde8a80e16dae16d",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1667153866294,
+            "created": 1666427196502,
+            "url": "{{ _.api }}/auth/login",
+            "name": "login admin",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"admin@local\",\n\t\"password\": \"admin\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1666427196503,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_dc8ff9d98c184d34af4661a4a14de5a5",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1667153879217,
+            "created": 1666432650352,
+            "url": "{{ _.api }}/auth/login",
+            "name": "login teamleader",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"teamleader@local\",\n\t\"password\": \"teamleader\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1666427196453,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2580127cb92142a791bdc66f0e5ad54d",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1667153868442,
+            "created": 1666452054420,
+            "url": "{{ _.api }}/auth/login",
+            "name": "login user",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"user@local\",\n\t\"password\": \"user\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1666427196403,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_22e6ff84a971a07563a7c46a24389d2042d7cc84",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1666430761257,
+            "created": 1666427196500,
+            "name": "Base Environment",
+            "data": {
+                "api": "http://127.0.0.1:4500/api"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "api"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1666427196500,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_22e6ff84a971a07563a7c46a24389d2042d7cc84",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1666427196501,
+            "created": 1666427196501,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_7bcbc1bce4374c509e8b23be0a772364",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1666427225405,
+            "created": 1666427196498,
+            "fileName": "Incentive-App",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "uts_0cc43eece3984f438d8a76484c48c84a",
+            "parentId": "wrk_398db1ef24ad4ba9853f394bd48adbac",
+            "modified": 1666427196503,
+            "created": 1666427196503,
+            "name": "Example Test Suite",
+            "_type": "unit_test_suite"
+        }
+    ]
+}

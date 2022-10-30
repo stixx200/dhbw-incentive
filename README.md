@@ -21,6 +21,17 @@ Es gibt folgende Benutzergruppen:
 * Teamleiter: Er besitzt ein Vergabekonto und kann die darin enthaltenen Incentive-Punkte an Anwender weitergeben. Er selbst kann auch Anwender sein.
 * Administrator: Er kann Vergabekonten und Vergabeberechtigte-Anwender-Beziehungen verwalten. Er ist selbst aber kein Anwender oder Teamleiter.
 
+### Quick-Start
+1. Download mongodb (als Docker image oder von hier: https://www.mongodb.com/try/download/community)
+2. `cd incentive-backend`
+3. `npm install`
+4. `npm run start`
+
+### Initial Admin Benutzer
+Beim Hochfahren des Backends wird überprüft, ob es einen `admin@local` Benutzer gibt. Wenn nicht, wird dieser wie folgt angelegt:
+* `email: 'admin@local'`
+* `password: 'admin'`
+
 ## Frontend
 
 Das neue Frontend soll folgende Anforderungen erfüllen:
@@ -38,3 +49,12 @@ Das neue Frontend soll folgende Anforderungen erfüllen:
 * Als Anwender/Teamleiter/Administrator möchte ich ein interaktives Product-Onboarding System beim ersten Login haben, um schnell die wichtigsten Funktionen der Seite kennen zu lernen
 * Als Administrator möchte ich einstellen können, wann Vergabekonten wie hoch automatisiert gefüllt werden, um mir bei dem manuellen Vorgang Zeit zu sparen.
 * Als Geschäftsführer möchte ich eine Auswertung der Incentive-Punktevergabe abrufen können, um sehen zu können, welcher Vergabeberechtigte viel oder wenig Incentive-Punkte vergibt.
+
+### Quick-Start
+1. `cd incentive-frontend`
+2. `npm install`
+3. `npm run start`
+
+# Further information
+
+* List of Material Icons: https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
