@@ -9,10 +9,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppHttpClient } from './shared/http-client.service';
 import { AuthService } from './shared/auth.service';
+import { UserService } from './shared/user.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { AuthService } from './shared/auth.service';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AppHttpClient, AuthService],
+  providers: [AppHttpClient, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

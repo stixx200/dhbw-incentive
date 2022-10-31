@@ -5,6 +5,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 const materialModules = [
     MatToolbarModule,
@@ -13,6 +16,9 @@ const materialModules = [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
+    MatChipsModule,
+    MatAutocompleteModule,
 ];
 
 @NgModule({

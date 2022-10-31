@@ -1,1 +1,54 @@
-<p>profile works!</p>
+<div class="container">
+    <mat-card class="profile-edit">
+        <mat-card-title>Edit your profile</mat-card-title>
+        <mat-card-subtitle>{{ user.firstname }} {{ user.lastname }}</mat-card-subtitle>
+        <mat-card-content>
+            <mat-form-field class="full-width"><input [(ngModel)]="user.email" name="email" matInput placeholder="email"></mat-form-field>
+            <mat-form-field class="full-width"><input [(ngModel)]="user.firstname" name="firstname" matInput placeholder="firstname"></mat-form-field>
+            <mat-form-field class="full-width"><input [(ngModel)]="user.lastname" name="lastname" matInput placeholder="lastname"></mat-form-field>
+            
+            <mat-form-field *ngIf="user.isTeamleader()" class="full-width" appearance="fill">
+                <mat-label>Assigned Users</mat-label>
+                <mat-chip-list #chipList>
+                  <mat-chip
+                    *ngFor="let userId of user.assignedUsers"
+                    (removed)="unassign(userId)">
+                    {{ userId }}
+                    <button matChipRemove>
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input
+                    placeholder="Add user..."
+                    #assignedUsersInput
+                    [formControl]="userCtrl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="assign($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="assign($event)">
+                  <mat-option *ngFor="let user of (allUsers)" [value]="user">
+                    {{user.email}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <button mat-button>RESET</button>
+          <button mat-button>SAVE</button>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+<div class="container">
+    <mat-card class="profile-edit">
+        <mat-card-title>Your Incentive Information</mat-card-title>
+        <mat-card-content>
+            <mat-form-field class="full-width"><input [(ngModel)]="user.receivedCredits" name="receivedCredits" matInput placeholder="receivedCredits"></mat-form-field>
+            <mat-form-field class="full-width"><input [(ngModel)]="user.creditsToPlace" name="creditsToPlace" matInput placeholder="creditsToPlace"></mat-form-field>
+        </mat-card-content>
+      </mat-card>
+</div>
