@@ -1,8 +1,11 @@
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { User } from '../shared/user.model';
+import { Component, OnInit } from '@angular/core';
+import { distinctUntilChanged, filter, lastValueFrom, Observable, Subscription } from 'rxjs';
+import { IUser, User } from '../shared/user.model';
 import { UserService } from '../shared/user.service';
+
+export function isNonNull<T>(value: T): value is NonNullable<T> {
+  return value != null;
+}
 
 @Component({
   selector: 'app-profile',
@@ -10,35 +13,27 @@ import { UserService } from '../shared/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user!: User;
-  separatorKeysCodes: number[] = [ENTER, COMMA];
-  userCtrl = new FormControl('');
-  @ViewChild('assignedUsersInput') assignedUsersInput!: ElementRef<HTMLInputElement>;
-  allUsers?: User[];
+  user$: Observable<User> = this.userService.getCurrentUser().pipe(filter(isNonNull), distinctUntilChanged());
+  user!: IUser;
+  sub?: Subscription;
 
   constructor(private readonly userService: UserService) { }
 
-  async ngOnInit(): Promise<void> {
-    await this.reloadUser();
-    if (this.user.isTeamleader()) {
-      this.allUsers = await this.userService.getAllUsers();
-    }
+  ngOnInit() {
+    this.sub = this.user$.subscribe(user => { this.user = { ...user }; });
   }
-  
-  async reloadUser() {
-    this.user = await this.userService.getUser();
+
+  ngOnDeinit() {
+    this.sub?.unsubscribe();
   }
 
   async saveUser() {
-    await this.userService.patchUser(this.user);
-  }
-
-  assign(event: unknown) {
-    console.log(event);
-  }
-
-  unassign(userId: string) {
-    const idx = this.user.assignedUsers.findIndex(id => (id === userId));
-    this.user.assignedUsers.splice(idx, 1);
+    console.log(this.user);
+    this.userService.patchUser(this.user._id, {
+      firstname: this.user.firstname,
+      lastname: this.user.lastname,
+      email: this.user.email,
+      assignedUsers: this.user.assignedUsers,
+    });
   }
 }

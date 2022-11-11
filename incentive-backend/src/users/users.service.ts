@@ -8,6 +8,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { User, UserDocument } from './user.schema';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UsersService {
@@ -42,12 +43,12 @@ export class UsersService {
   }
 
   async createUser(userToCreate: CreateUserDto) {
-    const userDocument = new this.userModel(userToCreate);
+    const userDocument = new this.userModel({ ...userToCreate, _id: new mongoose.Types.ObjectId() });
     await userDocument.save();
     return userDocument;
   }
 
-  async updateUser(userId: string, update: Partial<User>) {
+  async updateUser(userId: string, update: Partial<UserDto>) {
     const user = await this.findOneById(userId);
     Object.assign(user, update);
     await user.save();

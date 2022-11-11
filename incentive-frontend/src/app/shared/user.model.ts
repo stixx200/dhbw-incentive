@@ -1,6 +1,10 @@
-export type Roles = "user" | "teamleader" | "administrator";
+export enum Roles {
+    user = "user",
+    teamleader = "teamleader",
+    administrator = "administrator",
+}
 
-export interface User {
+export interface IUser {
     _id: string;
     email: string;
     firstname: string;
@@ -11,17 +15,24 @@ export interface User {
     assignedUsers: string[];
 }
 
-export class User implements User {
-    static createUser(user: User) {
-        return Object.assign(new User(), user) as Required<User>;
-    }
+export class User implements IUser {
+    _id!: string;
+    email!: string;
+    firstname!: string;
+    lastname!: string;
+    roles!: Roles[];
+    receivedCredits!: number;
+    creditsToPlace!: number;
+    assignedUsers!: string[];
 
-    private constructor() {}
+    constructor(user: IUser) {
+        Object.assign(this, user);
+    }
 
     isAdministrator(): boolean {
-        return this.roles.includes("administrator");
+        return this.roles.includes(Roles.administrator);
     }
     isTeamleader(): boolean {
-        return this.roles.includes("teamleader") || this.isAdministrator();
+        return this.roles.includes(Roles.teamleader) || this.isAdministrator();
     }
 }

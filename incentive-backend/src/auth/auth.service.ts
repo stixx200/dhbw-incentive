@@ -29,7 +29,7 @@ export class AuthService {
         firstname: user.firstname,
         lastname: user.lastname,
         roles: user.roles,
-      }, { expiresIn: "10h" }),
+      }),
       userId: user._id,
     };
   }

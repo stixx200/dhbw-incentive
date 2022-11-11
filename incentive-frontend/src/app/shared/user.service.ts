@@ -1,24 +1,67 @@
-import { Injectable } from "@angular/core";
-import { firstValueFrom } from "rxjs";
+import { Injectable, OnInit } from "@angular/core";
+import { BehaviorSubject, firstValueFrom, map, Observable, of, shareReplay, Subject, switchMap, tap } from "rxjs";
 import { AuthService } from "./auth.service";
 import { AppHttpClient } from "./http-client.service";
-import { User } from "./user.model";
+import { IUser, User } from "./user.model";
+
+export interface CreateUserDto {
+    email: string;
+    password: string;
+    firstname?: string;
+    lastname?: string;
+    roles?: string[];
+    assignedUsers?: string[];
+}
 
 @Injectable()
-export class UserService {
-    constructor(private readonly authService: AuthService, private readonly http: AppHttpClient) {}
+export class UserService implements OnInit {
+    private currentUser$ = this.authService.userId$.pipe(switchMap(userId => {
+        if (userId) {
+            return this.getUser(userId);
+        }
+        return of(null);
+    }), shareReplay(1));
+    private triggerFetchAllUsers$ = new BehaviorSubject<null>(null);
+    private allUsers$ = this.triggerFetchAllUsers$.pipe(switchMap(() => this.internalGetAllUsers()));
 
-    async getUser(): Promise<User> {
-        const data = await firstValueFrom(this.http.get(`/users/${this.authService.getUserId()}`));
-        return User.createUser(data as User);
+    constructor(private readonly authService: AuthService, private readonly http: AppHttpClient) {
     }
 
-    async patchUser(user: User): Promise<void> {
-        return await firstValueFrom(this.http.patch(`/users/${this.authService.getUserId()}`, user));
+    ngOnInit() {
+        this.triggerFetchAllUsers$.next(null);
     }
 
-    async getAllUsers() {
-        const users = await firstValueFrom(this.http.get<User[]>("/users"));
-        return users.map((user: User) => User.createUser(user));
+    getCurrentUser(): Observable<User | null> {
+        return this.currentUser$;
+    }
+
+    getUser(userId?: string): Observable<User> {
+        const result = this.http.get(`/users/${userId || this.authService.getUserId()}`);
+        return result.pipe(map((data) => {
+            return new User(data as User);
+        }));
+    }
+
+    async patchUser(userId: string, user: Partial<IUser>): Promise<void> {
+        return await firstValueFrom(this.http.patch(`/users/${userId}`, user));
+    }
+
+    postUser(user: CreateUserDto) {
+        return this.http.post("/users", user)
+        .pipe(tap(() => {
+            // update getAllUsers observable
+            this.triggerFetchAllUsers$.next(null);
+        }));
+    }
+
+    public getAllUsers() {
+        return this.allUsers$;
+    }
+
+    private internalGetAllUsers() {
+        console.log("REST");
+        return this.http.get<User[]>("/users").pipe(map((list) => {
+            return list.map(user => new User(user));
+        }));
     }
 }

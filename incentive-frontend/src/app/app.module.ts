@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppHttpClient } from './shared/http-client.service';
 import { AuthService } from './shared/auth.service';
 import { UserService } from './shared/user.service';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { AssignedUsersFormFieldComponent } from './shared/assigned-users-form-field/assigned-users-form-field.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UserService } from './shared/user.service';
     LoginComponent,
     HeaderComponent,
     ProfileComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    UserManagementComponent,
+    AssignedUsersFormFieldComponent
   ],
   imports: [
     BrowserModule,

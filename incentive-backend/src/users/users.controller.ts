@@ -67,11 +67,11 @@ export class UsersController {
     await this.userService.deleteUser(userId);
   }
 
-  @Roles(Role.Administrator)
   @Patch(':userId')
+  @UseGuards(OwnRouteOrAdminGuard)
   @ApiBody({ type: () => PatchUserDto })
   @ApiParam({ name: 'userId' })
-  async patchUser(@Param('userId') userId: string, @Body() update: User) {
+  async patchUser(@Param('userId') userId: string, @Body() update: Partial<UserDto>) {
     const user = await this.userService.updateUser(userId, update);
     return this.userToRest(user);
   }

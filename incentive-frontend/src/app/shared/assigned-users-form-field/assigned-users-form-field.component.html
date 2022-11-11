@@ -1,0 +1,29 @@
+<mat-form-field class="full-width" appearance="fill">
+  <mat-label>Assigned Users</mat-label>
+  <mat-chip-list #list>
+    <mat-chip
+      *ngFor="let user of assignedUsersExpanded"
+      (removed)="unassign(user._id)"
+    >
+      {{ user.email }}
+      <button *ngIf="isAdministrator$ | async" matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+    <input
+      *ngIf="isAdministrator$ | async"
+      placeholder="Add user..."
+      #assignedUsersInput
+      [formControl]="userCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="list"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="assign($event)"
+    />
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="assign($event)">
+    <mat-option *ngFor="let user of usersInSelection$ | async" [value]="user">
+      {{ user.email }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

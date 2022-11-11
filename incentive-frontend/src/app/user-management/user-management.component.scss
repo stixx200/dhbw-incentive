@@ -1,0 +1,77 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    mat-card {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        float: left;
+        padding: 60px 50px 40px 50px;
+        width: 100%;
+        background: grey;
+        border-radius: 10px;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        z-index: 5;
+        max-width: 330px;
+
+        .back {
+            transform: scale(.95);
+            -webkit-transform: scale(.95);
+            -ms-transform: scale(.95);
+            top: -20px;
+            opacity: .8;
+            z-index: -1;
+        }
+
+        form {
+            min-width: 100%;
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+
+    .full-width,
+    .btn-block {
+        width: 100%;
+    }
+
+    mat-card-header {
+        text-align: center;
+        width: 100%;
+        display: block;
+        font-weight: 700;
+    }
+
+    mat-card-header mat-card-title {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .mat-card {
+        padding: 40px 70px 50px;
+    }
+
+    .mat-stroked-button {
+        border: 1px solid currentColor;
+        line-height: 54px;
+        background: #FFF7FA;
+    }
+
+    .mat-form-field-appearance-legacy .mat-form-field-infix {
+        padding: 0.8375em 0;
+    }
+
+}
+
+mat-select {
+    .additional-selection {
+        opacity: 0.75;
+        font-size: 0.75em;
+      }
+}

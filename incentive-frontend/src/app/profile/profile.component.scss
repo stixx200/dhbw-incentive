@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-}
 
-.profile-edit {
-    width: 60%;
-    min-width: 400px;
-}
+    .profile-edit {
+        width: 60%;
+        min-width: 400px;
 
-.full-width {
-    width: 100%;
+        .full-width {
+            width: 100%;
+        }
+    }
 }
