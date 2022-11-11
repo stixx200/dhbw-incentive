@@ -59,7 +59,7 @@
     "nodejs.jest.jest_package": "/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/jest",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -82,24 +82,36 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="api integrationtest.can send POST users" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.app.integration.spec.ts">
+    <configuration name="api integrationtest" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
+      <working-dir value="$PROJECT_DIR$/apps/api" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/apps/api/performancetests/createUser.spec.ts" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/apps/api/integrationtest/app.integration.spec.ts" />
       <test-names>
         <test-name value="api integrationtest" />
-        <test-name value="can send POST users" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="api performance test createUser (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="api integrationtest.creates transaction" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
+      <working-dir value="$PROJECT_DIR$/apps/api" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/apps/api/integrationtest/app.integration.spec.ts" />
+      <test-names>
+        <test-name value="api integrationtest" />
+        <test-name value="creates transaction" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="api performance test createUser (2)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/apps/api" />
       <envs />
       <scope-kind value="SUITE" />
       <test-file value="$PROJECT_DIR$/apps/api/performancetest/createUser.performance.spec.ts" />
@@ -108,48 +120,31 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="api performance test createUser" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="app.integration.spec.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
+      <working-dir value="$PROJECT_DIR$/apps/api" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/apps/api/performancetests/createUser.performance.spec.ts" />
-      <test-names>
-        <test-name value="api performance test createUser" />
-      </test-names>
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/apps/api/integrationtest/app.integration.spec.ts" />
       <method v="2" />
     </configuration>
-    <configuration name="api performance test createUser.can send POST users" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="createUser.performance.spec.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
+      <working-dir value="$PROJECT_DIR$/apps/api" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/apps/api/performancetests/createUser.performance.spec.ts" />
-      <test-names>
-        <test-name value="api performance test createUser" />
-        <test-name value="can send POST users" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/incentive-backend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/apps/api/performancetest/createUser.performance.spec.ts" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
-        <item itemvalue="Jest.api performance test createUser (1)" />
-        <item itemvalue="Jest.api performance test createUser.can send POST users" />
-        <item itemvalue="Jest.api performance test createUser" />
-        <item itemvalue="Jest.api integrationtest.can send POST users" />
+        <item itemvalue="Jest.app.integration.spec.ts" />
+        <item itemvalue="Jest.api integrationtest.creates transaction" />
+        <item itemvalue="Jest.api integrationtest" />
+        <item itemvalue="Jest.createUser.performance.spec.ts" />
+        <item itemvalue="Jest.api performance test createUser (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696785221114</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="test(api): Add performance and integrationtests">
+      <option name="closed" value="true" />
+      <created>1697360863796</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697360863796</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +349,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: migrate to nx" />
-    <MESSAGE value="test(api): Add performance and integrationtests" />
     <MESSAGE value="test(incentive): Migrate to nx and add e2e test" />
     <MESSAGE value="d(incentive): Migrate to nx and add e2e test" />
     <MESSAGE value="doc: Update README" />
@@ -361,6 +363,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="feat: Initial commit" />
     <MESSAGE value="fixup! feat(backend): Add backend project" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixup! feat(backend): Add backend project" />
+    <MESSAGE value="test(api): Add performance and integrationtests" />
+    <option name="LAST_COMMIT_MESSAGE" value="test(api): Add performance and integrationtests" />
   </component>
 </project>

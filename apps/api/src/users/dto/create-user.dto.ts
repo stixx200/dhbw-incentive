@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
+import * as inventiveInterfaces from '@incentive/api-interfaces';
 
-export class CreateUserDto {
+export class CreateUserDto implements inventiveInterfaces.ICreateUserDto {
   @ApiProperty({ required: true })
   email: string;
   @ApiProperty({ required: true })

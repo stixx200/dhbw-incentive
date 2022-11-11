@@ -10,16 +10,16 @@ export class TransactionService {
   constructor(
     @InjectModel(Transaction.name)
     private transactionsModel: Model<TransactionDocument>,
-    private readonly userService: UsersService,
+    private readonly userService: UsersService
   ) {}
 
   getTransactionsForUser(userId: string) {
-    return this.transactionsModel.find({ userId });
+    return this.transactionsModel.find({ recipient: userId });
   }
 
   async createTransaction(
     senderId: string,
-    transactionToCreate: CreateTransactionDto,
+    transactionToCreate: CreateTransactionDto
   ) {
     // todo: Make this transaction safe
     const transaction = new this.transactionsModel({
@@ -30,7 +30,7 @@ export class TransactionService {
     await this.userService.reduceCredits(senderId, transactionToCreate.amount);
     await this.userService.addCredits(
       transactionToCreate.recipient,
-      transactionToCreate.amount,
+      transactionToCreate.amount
     );
     await transaction.save();
     return transaction;

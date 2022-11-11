@@ -1,13 +1,10 @@
-import { getGreeting } from '../support/app.po';
-
 describe('incentive', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
-
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome incentive');
+  it('should has working login form', () => {
+    cy.get('#login-form').should('exist');
+    cy.get('mat-card-title').contains('Log in');
+    cy.login('admin@local', 'admin');
+    cy.get('#login-form').should('not.exist');
   });
 });
