@@ -14,7 +14,7 @@ Der System Administrator füllt die Vergabekonten der Vorgesetzten jährlich auf
 ## Backend
 
 Das bestehende Backend wird über eine REST API angesprochen. Um die Dokumentation abzurufen, müssen Sie den Backend Server starten und die URL `http://127.0.0.1:4500/api-docs` aufrufen.
-Das Backend kann über den Befehl `npm run start` (Projekt: `incentive-backend`) gestartet werden.
+Das Backend kann über den Befehl `nx serve api` gestartet werden.
 
 Es gibt folgende Benutzergruppen:
 * Anwender/User: Er kann Incentive-Punkte empfangen, sammeln und diese gegen eine Prämie einlösen
@@ -23,14 +23,19 @@ Es gibt folgende Benutzergruppen:
 
 ### Quick-Start
 1. Download mongodb (als Docker image oder von hier: https://www.mongodb.com/try/download/community)
-2. `cd incentive-backend`
-3. `npm install`
-4. `npm run start`
+2. `npm install`
+3. `npm install -g nx`
+4. `nx serve api`
 
 ### Initial Admin Benutzer
 Beim Hochfahren des Backends wird überprüft, ob es einen `admin@local` Benutzer gibt. Wenn nicht, wird dieser wie folgt angelegt:
 * `email: 'admin@local'`
 * `password: 'admin'`
+
+### MongoDB
+In der [.env](.env) wird definiert, welche Datenbank verbunden wird.
+Um lokal eine MongoDB zu installieren, kann diese von der [MongoDB Homepage](https://www.mongodb.com/try/download/community) heruntergeladen werden.
+Alternativ kann auch ein Docker image über die [docker-compose-yml](docker-compose.yml) gestartet werden.
 
 ## Frontend
 
@@ -51,9 +56,8 @@ Das neue Frontend soll folgende Anforderungen erfüllen:
 * Als Geschäftsführer möchte ich eine Auswertung der Incentive-Punktevergabe abrufen können, um sehen zu können, welcher Vergabeberechtigte viel oder wenig Incentive-Punkte vergibt.
 
 ### Quick-Start
-1. `cd incentive-frontend`
 2. `npm install`
-3. `npm run start`
+3. `nx run-many --target=serve --projects="api,incentive"`
 
 # Further information
 

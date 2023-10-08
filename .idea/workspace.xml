@@ -27,6 +27,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="onto" value="a3e55b71c6eed3a2ec121d0100fe1eef42ca0c88" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -39,35 +42,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/voelkm/develop/dhbw-code/incentive-project/apps/api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/jest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "/Users/voelkm/develop/dhbw-code/incentive-project/apps/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/voelkm/develop/dhbw-code/incentive-project/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/api" />
@@ -75,20 +78,11 @@
       <recent name="$PROJECT_DIR$/apps/api/performancetests" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="Jest.api performance test createUser (1)">
-    <configuration name="UsersService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/apps/api/src/users/users.service.spec.ts" />
-      <test-names>
-        <test-name value="UsersService" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.start">
     <configuration name="api integrationtest.can send POST users" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -139,13 +133,23 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/incentive-backend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Jest.api performance test createUser (1)" />
         <item itemvalue="Jest.api performance test createUser.can send POST users" />
         <item itemvalue="Jest.api performance test createUser" />
         <item itemvalue="Jest.api integrationtest.can send POST users" />
-        <item itemvalue="Jest.UsersService" />
       </list>
     </recent_temporary>
   </component>
@@ -163,6 +167,7 @@
       <workItem from="1669622287405" duration="598000" />
       <workItem from="1696777467162" duration="27000" />
       <workItem from="1696777502702" duration="474000" />
+      <workItem from="1696777982312" duration="4698000" />
     </task>
     <task id="LOCAL-00001" summary="feat: migrate to nx">
       <created>1668190542440</created>
@@ -206,13 +211,129 @@
       <option name="project" value="LOCAL" />
       <updated>1668362332152</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="localhost to ip">
+      <option name="closed" value="true" />
+      <created>1696778263233</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696778263233</updated>
+    </task>
+    <task id="LOCAL-00008" summary="localhost to ip">
+      <option name="closed" value="true" />
+      <created>1696778268625</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696778268625</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixup! feat(api): Initial commit">
+      <option name="closed" value="true" />
+      <created>1696778896028</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696778896028</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixup! feat(api): Initial commit">
+      <option name="closed" value="true" />
+      <created>1696778945132</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696778945132</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat(frontend): build user-management">
+      <option name="closed" value="true" />
+      <created>1696778994139</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696778994139</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat(frontend): Add user-management">
+      <option name="closed" value="true" />
+      <created>1696779477571</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696779477571</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat(frontend): Add user-management">
+      <option name="closed" value="true" />
+      <created>1696779521769</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696779521769</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixup! feat(frontend): Add frontend project">
+      <option name="closed" value="true" />
+      <created>1696779534026</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696779534026</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: Add user-management">
+      <option name="closed" value="true" />
+      <created>1696781184080</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696781184080</updated>
+    </task>
+    <task id="LOCAL-00016" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1696781240041</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696781240042</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Initial commit">
+      <option name="closed" value="true" />
+      <created>1696785037006</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696785037006</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixup! feat(backend): Add backend project">
+      <option name="closed" value="true" />
+      <created>1696785221114</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1696785221114</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -229,6 +350,17 @@
     <MESSAGE value="test(incentive): Migrate to nx and add e2e test" />
     <MESSAGE value="d(incentive): Migrate to nx and add e2e test" />
     <MESSAGE value="doc: Update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: Update README" />
+    <MESSAGE value="localhost to ip" />
+    <MESSAGE value="feat(incentive): Add frontend project&#10;&#10;* Add insomnia and postman exports" />
+    <MESSAGE value="fixup! feat(api): Initial commit" />
+    <MESSAGE value="feat(frontend): build user-management" />
+    <MESSAGE value="fixup! feat(frontend): Add frontend project" />
+    <MESSAGE value="feat(frontend): Implement login" />
+    <MESSAGE value="feat(frontend): Add user-management" />
+    <MESSAGE value="feat: Add user-management" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="feat: Initial commit" />
+    <MESSAGE value="fixup! feat(backend): Add backend project" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixup! feat(backend): Add backend project" />
   </component>
 </project>
